@@ -1,9 +1,9 @@
 import java.util.Scanner;
 public class Student{
 	public static void main(String[] args){
-		data Student1 = new data();
-		data Student2 = new data();
-		data Student3 = new data();
+		Data Student1 = new Data();
+		Data Student2 = new Data();
+		Data Student3 = new Data();
 		
 		Student1.inputData();
 		Student2.inputData();
@@ -13,27 +13,25 @@ public class Student{
 		Student2.displayInfo();
 		Student3.displayInfo();
 		
-		data[] students = new data[2];
-		students[0] = Student1;
-		students[1] = Student2;
-		students[2] = Student3;
-		
-		char searchChar;
-		System.out.print("Search by: (I/N): "); searchChar = Scanner.NextChar();
-		for (int i = 0; i<3; i++){
-			if (searchChar == 'I' || searchChar == 'i'){
-				if 	
-			}
-		}
-		
-		
-		
+        Data[] students = new Data[3];
+        students[0] = Student1;
+        students[1] = Student2;
+        students[2] = Student3;
+
+        // Call searchStudent here
+        Data.searchStudent(students);
 	}
 }
 
-class data {
+class Data {
 	String name, dept;
 	int marks1, marks2, marks3, id;
+
+	/*Data[] students = new Data[3];
+		students[0] = Student1;
+		students[1] = Student2;
+		students[2] = Student3; */
+	
 	
 	public void inputData(){
 		Scanner myObj = new Scanner(System.in);
@@ -53,7 +51,28 @@ class data {
 		
 	}
 	
-	public void searchStudent(){
+	public static void searchStudent(Data[] students){
+		char searchChar;
+		Scanner myObj = new Scanner(System.in);
+		System.out.print("Search by: (I/N): "); searchChar = myObj.next().charAt(0);
+		for (int i = 0; i<3; i++){
+			if (searchChar == 'I' || searchChar == 'i'){
+				System.out.print("Enter ID: "); int sid = myObj.nextInt();
+				if (students[i].id == sid){
+					students[i].displayInfo();
+				}
+				else
+					System.out.println("Student Not found");
+			}
+			else if (searchChar == 'N' || searchChar == 'n'){
+				System.out.print("Enter ID: "); String sname = myObj.nextLine();
+				if (students[i].name.equals(sname)){
+					students[i].displayInfo();
+				}
+				else
+					System.out.println("Student Not found");
+			}
+		}
 	}
 	
 }
