@@ -18,7 +18,6 @@ public class Student{
         students[1] = Student2;
         students[2] = Student3;
 
-        // Call searchStudent here
         Data.searchStudent(students);
 	}
 }
