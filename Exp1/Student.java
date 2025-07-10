@@ -13,6 +13,20 @@ public class Student{
 		Student2.displayInfo();
 		Student3.displayInfo();
 		
+		data[] students = new data[2];
+		students[0] = Student1;
+		students[1] = Student2;
+		students[2] = Student3;
+		
+		char searchChar;
+		System.out.print("Search by: (I/N): "); searchChar = Scanner.NextChar();
+		for (int i = 0; i<3; i++){
+			if (searchChar == 'I' || searchChar == 'i'){
+				if 	
+			}
+		}
+		
+		
 		
 	}
 }
@@ -38,4 +52,8 @@ class data {
 		System.out.print("Average Marks: "); System.out.println((marks1+marks2+marks3)/3);
 		
 	}
+	
+	public void searchStudent(){
+	}
+	
 }
