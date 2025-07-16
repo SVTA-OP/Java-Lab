@@ -67,6 +67,9 @@ public class Salary {
             employees[i] =  new Employee();
             employees[i].insertData();
         }
+        for (int i=0;i<n;i++){
+            employees[i].paySlip();
+        }
         System.out.print("Enter ID to search: "); int sid = myObj.nextInt();
         empSearch.search(sid, employees, n);
 
