@@ -64,7 +64,7 @@ class Data {
 					System.out.println("Student Not found");
 			}
 			else if (searchChar == 'N' || searchChar == 'n'){
-				System.out.print("Enter ID: "); String sname = myObj.nextLine();
+				System.out.print("Enter Name: "); String sname = myObj.nextLine();
 				if (students[i].name.equals(sname)){
 					students[i].displayInfo();
 				}
