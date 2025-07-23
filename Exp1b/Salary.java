@@ -10,12 +10,13 @@ class Employee{
     void insertData(){
         System.out.print("Enter Name: "); name = myObj.nextLine();    
         System.out.print("Enter ID: "); id = myObj.nextInt();
+        myObj.nextLine(); 
         System.out.print("Enter Designation: "); designation = myObj.nextLine();
         System.out.print("Enter Years worked: "); yOfExp = myObj.nextInt();
         System.out.print("Enter Basic Pay: "); basicPay = myObj.nextInt();
         System.out.print("LIC (Y/N): "); licOpt = myObj.next().charAt(0);
         if (designation.equals("intern")){
-           System.out.print("Enter hours worked: "); hoursWorked = myObj.next().charAt(0);        
+           System.out.print("Enter hours worked: "); hoursWorked = myObj.nextInt();       
         }
 
     }
@@ -50,6 +51,7 @@ class Employee{
         for(int i = 0;i<n;i++){
             if (id == employees[i].id)
                 employees[i].paySlip();
+                found = true;
         }
         if (found == false)
             System.out.println("Employee not found");
