@@ -36,6 +36,7 @@ class Data {
 		Scanner myObj = new Scanner(System.in);
 		System.out.print("Enter ID: "); id = myObj.nextInt();
 		System.out.print("Enter Name: "); name = myObj.nextLine();
+		myObj.nextLine();
 		System.out.print("Enter Department: "); dept = myObj.nextLine();
 		System.out.print("Enter Mark for Subject 1: "); marks1 = myObj.nextInt();
 		System.out.print("Enter Mark for Subject 2: "); marks2 = myObj.nextInt();
