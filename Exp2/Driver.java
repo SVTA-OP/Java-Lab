@@ -66,8 +66,8 @@ class ElectricCar extends Car {
 public class Driver {
    public static void main(String[] args) {
     MotorVehicle v = new MotorVehicle("Honda", 180, "Red");
-    Car c = new Car("Toyota", 200, "Blue", "Petrol", "KA05AB1234");
-    ElectricCar e = new ElectricCar("Tesla", 250, "White", "Electric", "KA01EV8765", 85, 65);
+    Car c = new Car("Toyota", 200, "Blue", "Petrol", "T1234");
+    ElectricCar e = new ElectricCar("Tesla", 250, "White", "Electric", "TEV8765", 85, 65);
     
     v.displayInfo();
     c.displayInfo();

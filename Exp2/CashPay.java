@@ -6,7 +6,7 @@ interface Payable {
 }
 
 abstract class Payment implements Payable {
-    protected double amount;
+    double amount;
 
     Payment(double amount) {
         this.amount = amount;
@@ -96,7 +96,7 @@ public class CashPay {
     public static void main(String[] args) {
         Payment[] payments = new Payment[3];
         payments[0] = new CashPayment(1000);
-        payments[1] = new CreditCardPayment(2500, "1234-5678-9012", "Riya Mehta");
+        payments[1] = new CreditCardPayment(2500, "1234-5678-9012", "John");
         payments[2] = new UPIPayment(800, "riya@upi");
 
         for (int i=0; i<2;i++) {
@@ -106,9 +106,7 @@ public class CashPay {
             System.out.println("Validity: " + payments[i].validatePayment());
             System.out.println("\n");
         }
-
-        // Demonstrate overloaded method
-        CreditCardPayment alt_user = new CreditCardPayment(5000, "9876-5432-1010", "Ankit Sharma");
+        CreditCardPayment alt_user = new CreditCardPayment(5000, "9876-5432-1010", "Bob");
         alt_user.generateReceipt(true);
         alt_user.generateReceipt(false); 
 

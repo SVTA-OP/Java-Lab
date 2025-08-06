@@ -26,7 +26,7 @@ class IntStack implements ADT {
 	}
 	public int remove(){
 		int poppedElement = elements[indexOfLastElement - 1];
-		stack.indexOfLastElement--;
+		indexOfLastElement--;
 		return poppedElement;
 	}
 	public int peek(){
