@@ -25,8 +25,8 @@ class IntStack implements ADT {
 			System.out.println("Stack is full");
 	}
 	public int remove(){
-		int poppedElement = elements[indexOfLastElement - 1];
-		indexOfLastElement--;
+		int poppedElement = elements[indexOfLastElement--];
+		// indexOfLastElement--;
 		return poppedElement;
 	}
 	public int peek(){
@@ -38,19 +38,65 @@ class IntStack implements ADT {
 		return false;
 	}
 	public int size(){
-		return indexOfLastElement + 1;
+		return indexOfLastElement;
 	}
 	
 }
+
+class IntQueue implements ADT {
+	int[] elements;
+	int front;
+	int end;
+	
+	IntQueue(int[] elements, int front, int end){
+		this.elements = elements;
+		this.front = front;
+		this.end = end;
+	}
+	
+	public boolean isEmpty(){
+		if (front == end)
+			return true;
+		return false;
+	}
+	
+	public void insert(int element){
+		if (end +1 < 10){
+			elements[end++] = element;
+		}
+		else
+			System.out.println("Queue is full");
+	}
+	
+	public int remove(){
+		if (isEmpty()){
+			System.out.println("Queue is empty");
+			return 404;
+		}
+		else {
+			return elements[front++];
+		}
+	}
+	
+	public int peek(){
+		return elements[front];		
+	}
+	
+	public int size(){
+		return end - front;
+	}
+} 
+
 
 public class JavaADT {
 	public static void main(String[] args){
 		// System.out.println("HelloWorld");
 		
 		int[] elements = new int[10];
-		int indexOfLastElement = 0;
-		IntStack stack = new IntStack(elements, indexOfLastElement);
+		// int indexOfLastElement = 0;
+		IntStack stack = new IntStack(elements, 0);
 		Scanner myObj = new Scanner(System.in);
+		IntQueue queue = new IntQueue(elements, 0, 0);
 		
 		System.out.print("Stack or Queue (S/Q): "); char adtType = myObj.next().charAt(0);
 		
@@ -75,7 +121,27 @@ public class JavaADT {
 					System.out.println("Size: "+stack.size());
 				}
 				else
-					break;
+					break; 
+			}
+			else if (adtType == 'Q'){
+				if (choice == 1){
+					System.out.print("Enter element to add: "); int element = myObj.nextInt();
+					queue.insert(element);
+				}
+				else if(choice == 2){
+					System.out.println("Removed element: "+queue.remove());
+				}
+				else if(choice == 3){
+					System.out.println("Top of Stack: "+queue.peek());
+				}
+				else if(choice == 4){
+					System.out.println("Queue is empty: "+ queue.isEmpty());
+				}
+				else if(choice == 5){
+					System.out.println("Size: "+queue.size());
+				}
+				else
+					break; 
 			}
 		}
 	}

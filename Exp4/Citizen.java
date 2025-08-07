@@ -16,9 +16,10 @@ class CitizenCheck {
     void getInput(){
         System.out.print("Enter name: "); name = myObj.nextLine();
         System.out.print("Enter Aadhar Number: "); aadharNumber = myObj.nextLine();
-        System.out.print("Enter age: "); ageString = myObj.nextLine();
+        System.out.print("Enter age: "); // age = myObj.nextInt();
         try{
-            age = Integer.parseInt(ageString);
+            // age = Integer.parseInt(ageString);
+            age = myObj.nextInt();
         }
         catch (NumberFormatException e){
             throw new NumberFormatException("Invalid input, not an integer");
