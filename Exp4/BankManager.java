@@ -66,7 +66,7 @@ class BankAccount {
         if (pan == null)
             return false;
 
-        // pattern match remains unchanged
+        
         return pan.matches("[A-Za-z]{5}\\d{4}[A-Za-z]");
     }
 
@@ -115,7 +115,7 @@ public class BankManager {
         n = Integer.parseInt(sc.nextLine());
         BankAccount[] accounts = new BankAccount[n];
 
-        // Enter user data for all accounts
+        
         for (int i = 0; i < n; i++) {
             while (true) {
                 try {
@@ -140,12 +140,12 @@ public class BankManager {
             }
         }
 
-        // Deposit and withdraw operations for all accounts
+        
         for (int i = 0; i < n; i++) {
             System.out.println("\nAccount " + accounts[i].acct_num);
             accounts[i].display();
 
-            // Deposit
+            
             try {
                 System.out.print("Deposit amount ");
                 double damt = Double.parseDouble(sc.nextLine());
@@ -159,7 +159,7 @@ public class BankManager {
                 System.out.println("Deposit error " + e.getMessage());
             }
 
-            // Withdraw
+            
             try {
                 System.out.print("Withdraw amount ");
                 double wamt = Double.parseDouble(sc.nextLine());
@@ -169,7 +169,7 @@ public class BankManager {
             }
         }
 
-        // Show all accounts
+        
         System.out.println("\nAll account details");
         for (int i = 0; i < n; i++) {
             accounts[i].display();
