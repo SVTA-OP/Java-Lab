@@ -9,34 +9,34 @@ class GenericStack<T>{
 		size++;
 	}
 	
-	void pop(){
+	T pop(){
 		if (size !=0){
 			T x = stack.remove(size - 1);
 			size--;
-			System.out.println("Popped value: "+x);
+			// System.out.println("Popped value: "+x);
+			return x;
 		}
-		else
+		else{
 			System.out.println("Cannot pop: Empty Stack");
-			
-			
+			return null;
+		}
 	}
 	
-	void peek(){
-		T x;
+	T peek(){
 		if (size == 0){
 			System.out.println("Stack is empty");
-			// return x;
+			return null;
 		}
 		else
-			 System.out.println(stack.get(size-1));
+			return stack.get(size-1);
 	}
 	
-	void isEmpty(){
-		System.out.println(size == 0);
+	boolean isEmpty(){
+		return (size == 0);
 	}
 	
-	void size(){
-		System.out.println(size);
+	int size(){
+		return size;
 	}
 	
 }
@@ -46,18 +46,20 @@ public class GenStackMain{
 		GenericStack<Integer> intStack = new GenericStack<>();
 		intStack.push(2);
 		intStack.push(4);
-		intStack.pop();
-		intStack.peek();
-		intStack.isEmpty();
-		intStack.size();
+		System.out.println("Popped element: "+intStack.pop());
+		System.out.println("Peeked element: "+intStack.peek());
+		System.out.println("Stack is empty: "+intStack.isEmpty());
+		System.out.println("Stack size: "+intStack.size());
 		
+		System.out.println("==============================================");
+
 		GenericStack<String> stringStack = new GenericStack<>();
 		stringStack.push("Hello");
 		stringStack.push("World");
-		stringStack.pop();
-		stringStack.peek();
-		stringStack.isEmpty();
-		stringStack.size();
+		System.out.println("Popped element"+stringStack.pop());
+		System.out.println("Peeked element: "+stringStack.peek());
+		System.out.println("Stack is empty: "+stringStack.isEmpty());
+		System.out.println("Stack size: "+stringStack.size());
 		
 	}
 }
