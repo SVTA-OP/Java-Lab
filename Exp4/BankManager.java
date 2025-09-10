@@ -66,19 +66,19 @@ class BankAccount {
         if (pan == null || pan.length() != 10)
         return false;
 
-		// Check first 5 characters are letters
+		
 		for (int i = 0; i < 5; i++) {
 		    char c = pan.charAt(i);
 		    if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
 		        return false;
 		}
-		// Check next 4 characters are digits
+		
 		for (int i = 5; i < 9; i++) {
 		    char c = pan.charAt(i);
 		    if (!(c >= '0' && c <= '9'))
 		        return false;
 		}
-		// Check last character is a letter
+		
 		char last = pan.charAt(9);
 		if (!((last >= 'A' && last <= 'Z') || (last >= 'a' && last <= 'z')))
 		    return false;

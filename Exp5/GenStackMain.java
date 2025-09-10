@@ -22,7 +22,7 @@ class GenericStack<T>{
 		}
 	}
 	
-	T peek(){
+	T peek(){                priorityQueue.add(new HashMap.Entry<>("Item "+item, item));
 		if (size == 0){
 			System.out.println("Stack is empty");
 			return null;
