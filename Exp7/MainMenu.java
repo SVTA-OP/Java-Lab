@@ -6,7 +6,7 @@ public class MainMenu {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
-        do {
+        while (true) {
             System.out.println("\nMenu:");
             System.out.println("1. ArrayList Operations on Strings");
             System.out.println("2. Operations on Two Integer Arrays");
@@ -44,13 +44,11 @@ public class MainMenu {
                     break;
                 case 0:
                     System.out.println("Exiting...");
-                    break;
+                    System.exit(0);
                 default:
                     System.out.println("Invalid choice. Try again.");
             }
-        } while (choice != 0);
-
-        scanner.close();
+        } 
     }
 
     private static void arrayListStrings(Scanner scanner) {
