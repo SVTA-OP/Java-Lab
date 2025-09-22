@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class MainMenu {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -73,7 +74,9 @@ public class MainMenu {
         System.out.println("Enter string to search:");
         String searchStr = scanner.nextLine();
         int foundIndex = list.indexOf(searchStr);
-        System.out.println("Found at index: " + (foundIndex != -1 ? foundIndex : "Not found"));
+        System.out.println(
+            "Found at index: " + (foundIndex != -1 ? foundIndex : "Not found")
+        );
 
         // d. Display list starting with given letter
         System.out.println("Enter letter:");
@@ -319,7 +322,9 @@ public class MainMenu {
         HashMap<String, String> directory = new HashMap<>();
 
         // a. Insert names as keys and phone numbers as values
-        System.out.println("Enter 3 name-phone pairs (name then phone on separate lines):");
+        System.out.println(
+            "Enter 3 name-phone pairs (name then phone on separate lines):"
+        );
         for (int i = 0; i < 3; i++) {
             String name = scanner.nextLine();
             String phone = scanner.nextLine();
@@ -330,7 +335,9 @@ public class MainMenu {
         // b. Search for a person's phone number by name
         System.out.println("Enter name to search:");
         String searchName = scanner.nextLine();
-        System.out.println("Phone: " + directory.getOrDefault(searchName, "Not found"));
+        System.out.println(
+            "Phone: " + directory.getOrDefault(searchName, "Not found")
+        );
 
         // c. Remove an entry and display updated map
         System.out.println("Enter name to remove:");
