@@ -6,8 +6,9 @@ class Task1 extends Thread {
             i++;
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                System.out.println("Unable to sleep");
+            } 
+            catch (InterruptedException e) {
+                System.out.println("Thread interrupted: " + e.getMessage());
             }
         }
     }
@@ -21,8 +22,9 @@ class Task2 implements Runnable {
             j++;
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                System.out.println("Unable to sleep");
+            } 
+            catch (InterruptedException e) {
+                System.out.println("Thread interrupted: " + e.getMessage());
             }
         }
     }
